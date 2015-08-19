@@ -3,7 +3,6 @@
   const height = window.innerHeight;
 
   const paper = Snap(width, height);
-
   const gradient = paper.gradient('r()#fff-#000');
 
   let img = {
@@ -32,7 +31,7 @@
       });
     });
 
-  window.addEventListener('mousemove', (e) => {
+  let redrawMasks = (e) => {
     Object.keys(mask)
       .forEach((item) => {
         mask[item].attr({
@@ -40,5 +39,7 @@
           cy: e.clientY,
         });
       });
-  });
+  };
+
+  paper.mousemove(redrawMasks);
 })();

@@ -5,7 +5,16 @@
 * @Last Modified time: 2015-08-13 16:27:55
 */
 
+html,
 body {
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+circle {
+  transform: translate3d(0, 0, 0);
 }

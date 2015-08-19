@@ -5,7 +5,6 @@
   var height = window.innerHeight;
 
   var paper = Snap(width, height);
-
   var gradient = paper.gradient('r()#fff-#000');
 
   var img = {
@@ -33,13 +32,15 @@
     });
   });
 
-  window.addEventListener('mousemove', function (e) {
+  var redrawMasks = function redrawMasks(e) {
     Object.keys(mask).forEach(function (item) {
       mask[item].attr({
         cx: e.clientX,
         cy: e.clientY
       });
     });
-  });
+  };
+
+  paper.mousemove(redrawMasks);
 })();
 //# sourceMappingURL=app.js.map
